@@ -8,6 +8,19 @@ An additional feature is the **SHAP interpretability** to provide transparent in
 
 -----
 
+## Problem statement
+
+▸
+Predicting the next day's closing price of a major financial index like the S&P 500 (^GSPC) is one of the most challenging tasks in time series analysis due to market noise, non-linearity, volatility, and the highly non-stationary nature of price data.
+▸
+Traditional methods (e.g., statistical models) often fail to capture complex patterns in financial markets.
+▸
+Goal: Build a robust deep learning model to predict the next day's closing price of the S&P 500, outperforming benchmarks.
+▸
+Why it matters: Accurate predictions can inform trading strategies, risk management, and investment decisions in volatile markets.
+
+-----
+
 ##  Key Objectives
 
   * **Benchmarking (Base Models):** Establish performance baselines using classical time series models (ARIMA, SARIMA) and a modern additive model (Prophet).
