@@ -2,9 +2,8 @@
 
 ## Project Overview
 
-This project implements a multi-stage forecasting approach, starting with established **Base Models** (ARIMA, SARIMA, Prophet) for benchmarking, before moving to a highly advanced **Hybrid LSTM-Transformer model** to forecast daily S\&P 500 index closing prices for a 30-day horizon. The hybrid model combines Long Short-Term Memory (LSTM) networks for capturing short-term sequential dependencies with the Transformer's attention mechanism for modeling long-term market trends.
+This project implements a multi-stage forecasting approach, starting with established **Base Models** for benchmarking, before moving to a highly advanced **Hybrid LSTM-Transformer model** to forecast daily S\&P 500 index closing prices for a 30-day horizon. The hybrid model combines Long Short-Term Memory (LSTM) networks for capturing short-term sequential dependencies with the Transformer's attention mechanism for modeling long-term market trends.
 
-An additional feature is the **SHAP interpretability** to provide transparent insights into the predictions. The output is delivered through an interactive Streamlit dashboard.
 
 -----
 
@@ -75,10 +74,10 @@ The project follows a rigorous, multi-level modeling approach:
 
 | Component | Technique | Role |
 | :--- | :--- | :--- |
-| **Core Model** | **Hybrid LSTM-Transformer** | **LSTM** captures short-term momentum; **Transformer's** multi-head attention models long-term market cycles and dependencies. |
-| **Robustness** | Ensemble Stacking | Combines the LSTM-Transformer with **XGBoost** to enhance prediction stability and non-linear feature handling. |
-| **Interpretability** | SHAP (SHapley Additive exPlanations) | Calculates feature contribution to each prediction, identifying the key drivers (e.g., volatility vs. lagged price). |
-| **Optimization** | Optuna | Used for Bayesian hyperparameter tuning across all complex models. |
+| **Core Model** | **LSTM** | Acts as a sequential feature extractor, capturing the short-term momentum and time-dependent relationships across the 5-day input window. |
+| **Prediction Model** | Hybrid LSTM-Transformer | Combines the LSTM's momentum tracking with the MultiHeadAttention mechanism to assign dynamic weight to critical events or long-term trends within the 5-day sequence. |
+| **Model Optimization** | Adam Optimizer (via Keras) | The algorithm used to adjust the network's weights during training, aiming to minimize the prediction error (loss function) efficiently.. |
+| **Robustness** | Ensemble Stacking | Combines the Hybrid model's output with predictions from other powerful models like XGBoost to enhance prediction stability and non-linear feature handling. |
 
 -----
 
