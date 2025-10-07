@@ -56,7 +56,14 @@ Why it matters: Accurate predictions can inform trading strategies, risk managem
 
 The project follows a rigorous, multi-level modeling approach:
 
-### 1\. Base Models (Benchmarking)
+### 1\. Base line Models
+
+| Model | Technique | Role |
+| :--- | :--- | :--- |
+| **Random forest** | Ensemble Learning (Bagging) | Uses an ensemble of decision trees to capture complex, non-linear relationships between the features and the target variable. It serves as a baseline for generalized ML performance. |
+| **Xgboost** | Ensemble Learning (Boosting) | A highly efficient and optimized gradient boosting framework. It iteratively corrects the errors of previous trees, making it extremely powerful at minimizing prediction error and often outperforming Random Forest in predictive power. |
+
+### 2\. Time series Models
 
 | Model | Technique | Role |
 | :--- | :--- | :--- |
@@ -64,7 +71,7 @@ The project follows a rigorous, multi-level modeling approach:
 | **SARIMA** | Seasonal ARIMA | Extends ARIMA to capture seasonality and cyclical patterns inherent in financial data. |
 | **Prophet** | Additive Regression Model (Meta) | Models time series based on trend, seasonality, and holidays; serves as a strong modern benchmark for comparison. |
 
-### 2\. Advanced Models
+### 3\. Advanced Models
 
 | Component | Technique | Role |
 | :--- | :--- | :--- |
